@@ -1,2 +1,2 @@
 # leaf
-PHP DOM Generator
+PHP / JS DOM Generator
