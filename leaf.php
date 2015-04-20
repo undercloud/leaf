@@ -78,10 +78,17 @@
 			}
 
 			$this->content .= $space . '<' . $tag . ($attr ? (' ' .implode(' ',$attr)) : '') . ($closed ? ' />' : '>') . $text;
-	   
+		
 			return $this;
 		}
  
+
+		public function __get($p)
+		{
+			if($p == 'end')
+				return $this->end();
+		}
+
 		public function end()
 		{
 			$space = '';
@@ -103,4 +110,3 @@
 		}
 	}
 ?>
-
