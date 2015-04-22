@@ -1,5 +1,5 @@
 (function(){
-	"use strict"
+	"use strict";
 
 	window.leaf = function(o) {
 		var format = false;
@@ -44,6 +44,23 @@
 					text = args[2];
 				break;
 			}
+
+			tag = tag.replace(/(\.|\#)([A-Za-z]+)/g,function(a,b,c){
+				switch(b){
+					case '.':
+						if(typeof attr['class'] != 'undefined')
+							attr['class'] += ' ' + c
+						else
+							attr['class'] = c; 
+					break;
+
+					case '#':
+						attr['id'] = c;
+					break;
+				}
+
+				return '';
+			})
 
 			var inline = [];
 
