@@ -42,6 +42,27 @@
 				break;
 			}
  
+			$tag = preg_replace_callback(
+				'/(\.|\#)([A-Za-z]+)/',
+				function($m)use(&$attr){
+					switch($m[1]){
+						case '.':
+							if(isset($attr['class']))
+								$attr['class'] .= ' ' . $m[2];
+							else
+								$attr['class'] = $m[2]; 
+						break;
+
+						case '#':
+							$attr['id'] = $m[2];
+						break;
+					}
+
+					return;
+				},
+				$tag
+			);
+
 			if($attr){
 				array_walk($attr,function(&$a, $b){
 					if(is_numeric($b)){
