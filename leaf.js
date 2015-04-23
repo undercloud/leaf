@@ -45,7 +45,7 @@
 				break;
 			}
 
-			tag = tag.replace(/(\.|\#)([A-Za-z]+)/g,function(a,b,c){
+			tag = tag.replace(/(\.|\#|\:)([A-Za-z]+)/g,function(a,b,c){
 				switch(b){
 					case '.':
 						if(typeof attr['class'] != 'undefined')
@@ -56,6 +56,14 @@
 
 					case '#':
 						attr['id'] = c;
+					break;
+
+					case ':':
+						if(-1 != ['button','checkbox','file','hidden','image','password','radio','reset','submit','text'].indexOf(c)){
+							attr['type'] = c;
+						}else if(-1 != ['checked','disabled','readonly','required','multiple'].indexOf(c)){
+							attr[c] = c;
+						}
 					break;
 				}
 
