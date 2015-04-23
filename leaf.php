@@ -41,9 +41,9 @@
 					$text = $args[2];
 				break;
 			}
- 
+
 			$tag = preg_replace_callback(
-				'/(\.|\#)([A-Za-z]+)/',
+				'/(\.|\#|\:)([A-Za-z]+)/',
 				function($m)use(&$attr){
 					switch($m[1]){
 						case '.':
@@ -55,6 +55,14 @@
 
 						case '#':
 							$attr['id'] = $m[2];
+						break;
+
+						case ':':
+							if(in_array($m[2],array('button','checkbox','file','hidden','image','password','radio','reset','submit','text'))){
+								$attr['type'] = $m[2];
+							}else if(in_array($m[2],array('checked','disabled','readonly','required','multiple'))){
+								$attr[$m[2]] = $m[2];
+							}
 						break;
 					}
 
