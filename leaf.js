@@ -21,7 +21,7 @@
 			format = o.format;
 		}
 
-		var htmlentities = function(s){
+		this.escape = function(s){
 			var pre = document.createElement('pre');
 	   		var text = document.createTextNode(s);
 			pre.appendChild(text);
@@ -86,9 +86,9 @@
 							}
 						}
 
-						inline.push(x + '="' + htmlentities(s.join(';')) + '"');
+						inline.push(x + '="' + this.escape(s.join(';')) + '"');
 					}else{
-						inline.push(x + '="' + htmlentities(attr[x]) + '"');
+						inline.push(x + '="' + this.escape(attr[x]) + '"');
 					}
 				}
 			}
