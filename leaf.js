@@ -111,6 +111,10 @@
 			return this;
 		}
 
+		this.text = function(t){
+			content += t;
+		}
+
 		this.end = function(){
 			var space = '';
 			level--;
