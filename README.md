@@ -33,7 +33,7 @@ simple example
 ```
 
 ##methods
-el - create element
+**el** - create element
 ```PHP
 $l->el('tag')
 ```
@@ -50,7 +50,7 @@ or
 $l->el('tag',array $attr,'text')
 ```
 
-text - create text node
+**text** - create text node
 ```PHP
 $l->text('any content')
 ```
