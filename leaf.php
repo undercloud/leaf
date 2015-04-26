@@ -22,6 +22,11 @@
 			return new self($o);
 		}
 
+		public static function escape($a)
+		{
+			return htmlentities($a,ENT_QUOTES,'UTF-8',false);
+		}
+
 		public function el($tag)
 		{
 			$attr = array();
@@ -74,7 +79,7 @@
 			if($attr){
 				array_walk($attr,function(&$a, $b){
 					if(is_numeric($b)){
-						$a = htmlentities($a,ENT_QUOTES,'UTF-8',false);
+						$a = Leaf::escape($a);
 					}else{
 						if('style' == $b and is_array($a)){
 							array_walk($a,function(&$x, $y){
@@ -84,7 +89,7 @@
 							$a = implode(';',$a);
 						}
 
-						$a = $b . '="' . htmlentities($a,ENT_QUOTES,'UTF-8',false) . '"';
+						$a = $b . '="' . Leaf::escape($a) . '"';
 					}
 				});
 			}
