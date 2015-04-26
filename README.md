@@ -49,3 +49,8 @@ or
 ```PHP
 $l->el('tag',array $attr,'text')
 ```
+
+text - create text node
+```PHP
+$l->text('any content')
+```
