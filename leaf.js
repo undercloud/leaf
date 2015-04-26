@@ -21,7 +21,7 @@
 			format = o.format;
 		}
 
-		this.escape = function(s){
+		leaf.escape = function(s){
 			var pre = document.createElement('pre');
 	   		var text = document.createTextNode(s);
 			pre.appendChild(text);
@@ -86,9 +86,9 @@
 							}
 						}
 
-						inline.push(x + '="' + this.escape(s.join(';')) + '"');
+						inline.push(x + '="' + leaf.escape(s.join(';')) + '"');
 					}else{
-						inline.push(x + '="' + this.escape(attr[x]) + '"');
+						inline.push(x + '="' + leaf.escape(attr[x]) + '"');
 					}
 				}
 			}
