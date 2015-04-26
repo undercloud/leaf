@@ -9,14 +9,17 @@
 		var selfclosing = ['area','base','br','col', 'command', 'embed','hr', 'img', 'input','keygen','link','meta','param','source','track','wbr'];
 		var content = '';
 
-		if(typeof o == 'undefined')
-			o = {}
+		if(typeof o == 'undefined'){
+			o = {};
+		}
 
-		if(typeof o.selfclosing != 'undefined')
+		if(typeof o.selfclosing != 'undefined'){
 			selfclosing = o.selfclosing;
+		}
 
-		if(typeof o.format != 'undefined')
+		if(typeof o.format != 'undefined'){
 			format = o.format;
+		}
 
 		var htmlentities = function(s){
 			var pre = document.createElement('pre');
@@ -33,10 +36,11 @@
 
 			switch(args.length){
 				case 2:
-					if(args[1] === Object(args[1]))
+					if(args[1] === Object(args[1])){
 						attr = args[1];	  
-					else
+					}else{
 						text = args[1];
+					}
 				break;
 
 				case 3:
@@ -91,18 +95,19 @@
 
 			var space = '';
 
-			if(true === format)
+			if(true === format){
 				var indent = new Array(level + 1).join('  ');
+			}
 
 			var closed = (-1 != selfclosing.indexOf(tag));
 
-			if(false == closed){
+			if(false === closed){
 				tags_stack.push(tag);
 				level++;
 			}
 
 			if(true === format){
-				fill_stack.push(false == closed && text != '');
+				fill_stack.push(false === closed && text != '');
 				space = (level > 1 ? ('\n' + indent) : '');
 			}
 
@@ -121,7 +126,7 @@
 
 			if(true === format){
 				var indent = new Array(level + 1).join('  ');
-				space = (false == fill_stack.pop() ? ('\n' + indent) : '');
+				space = (false === fill_stack.pop() ? ('\n' + indent) : '');
 			}
 
 			content += space + '</' + tags_stack.pop() + '>';
