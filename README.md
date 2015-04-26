@@ -11,7 +11,7 @@ simple example
 		->el('body')
 			->el('h1#id.classname','Heading')->end
 			->el('p',array('class' => 'article'),'Lorem ipsum...')->end
-			->el('input',array('type'=>'text'))
+			->el('input:text',array('value'=>'text'))
 		->end
 	->end;
 
