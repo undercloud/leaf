@@ -54,6 +54,10 @@ You can combine tag with #id and .classname shortcut e.g.
 ```PHP
 $l->el('span#id.classname.anotherclass')
 ```
+Single attr helper for 'checked','disabled','readonly','required','multiple e.g.
+```PHP
+$l->('select:multiple')
+```
 
 **text** - create text node
 ```PHP
