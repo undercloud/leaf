@@ -54,7 +54,7 @@ You can combine tag with #id and .classname shortcut e.g.
 ```PHP
 $l->el('span#id.classname.anotherclass')
 ```
-button,checkbox,file,hidden,image,password,radio,reset,submit,text
+Input[type] attr helper for button,checkbox,file,hidden,image,password,radio,reset,submit,text e.g.
 ```PHP
 $l->el('input:text')
 ```
