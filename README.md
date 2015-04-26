@@ -50,6 +50,11 @@ or
 $l->el('tag',array $attr,'text')
 ```
 
+You can combine tag with #id and .classname shortcut e.g.
+```PHP
+$l->el('span#id.classname.anotherclass')
+```
+
 **text** - create text node
 ```PHP
 $l->text('any content')
