@@ -54,3 +54,16 @@ $l->el('tag',array $attr,'text')
 ```PHP
 $l->text('any content')
 ```
+
+**end** - close tag
+#l->end()
+
+##helpers
+**init** - create instance
+```PHP
+Leaf::init($opt = array())
+```
+**escape** - escape special chars
+```PHP
+Leaf::escape($s)
+```
