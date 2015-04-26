@@ -1,7 +1,6 @@
 # leaf
 PHP / JS DOM Generator
 
-
 simple example
 ```PHP
 	require 'leaf.php';
@@ -19,7 +18,7 @@ simple example
 	echo $l;
 ```
 
-constructor
+##constructor
 
 ```PHP
 	$l = new Leaf(
@@ -31,4 +30,22 @@ constructor
 		)
 	);
 
+```
+
+##methods
+el - create element
+```PHP
+$l->el('tag')
+```
+or
+```PHP
+$l->el('tag','text')
+```
+or
+```PHP
+$l->el('tag',array $attr)
+```
+or
+```PHP
+$l->el('tag',array $attr,'text')
 ```
