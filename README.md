@@ -1,6 +1,8 @@
 # leaf
 PHP / JS DOM Generator
 
+
+simple example
 ```PHP
 	require 'leaf.php';
 
@@ -15,4 +17,18 @@ PHP / JS DOM Generator
 	->end;
 
 	echo $l;
+```
+
+constructor
+
+```PHP
+	$l = new Leaf(
+		array(
+			//format tree
+			'format' => true
+			//define own single tags
+			'selfclosing' => array(...) 
+		)
+	);
+
 ```
