@@ -56,7 +56,9 @@ $l->text('any content')
 ```
 
 **end** - close tag
-#l->end()
+```PHP
+$l->end()
+```
 
 ##helpers
 **init** - create instance
