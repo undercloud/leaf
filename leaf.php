@@ -111,6 +111,10 @@
 			return $this;
 		}
  
+		public function text($t)
+		{
+			$this->content .= $t;
+		}
 
 		public function __get($p)
 		{
