@@ -48,7 +48,7 @@
 			}
 
 			$tag = preg_replace_callback(
-				'/(\.|\#|\:)([A-Za-z]+)/',
+				'/(\.|\#|\:)([A-Za-z0-9\-\_]+)/',
 				function($m)use(&$attr){
 					switch($m[1]){
 						case '.':
@@ -78,7 +78,7 @@
 
 			if($attr){
 				array_walk($attr,function(&$a, $b){
-					if(is_numeric($b)){
+					if(is_integer($b)){
 						$a = Leaf::escape($a);
 					}else{
 						if('style' == $b and is_array($a)){
