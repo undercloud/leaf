@@ -24,9 +24,11 @@ simple example
 	$l = new Leaf(
 		array(
 			//format tree
-			'format' => true
+			'format' => true,
+			//indent in formatted tree, default two spaces
+			'indent' => '  ',
 			//define own single tags
-			'selfclosing' => array(...) 
+			'selfclosing' => array(...)
 		)
 	);
 
