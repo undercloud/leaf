@@ -61,7 +61,7 @@ $l->el('input:text')
 
 Single attr helper for 'checked','disabled','readonly','required','multiple e.g.
 ```PHP
-$l->('select:multiple')
+$l->el('select:multiple')
 ```
 
 **text** - create text node
@@ -69,9 +69,14 @@ $l->('select:multiple')
 $l->text('any content')
 ```
 
+**raw** - add raw data wihout escaping
+```PHP
+$l->raw('raw content')
+```
+
 **end** - close tag
 ```PHP
-$l->end()
+$l->end() // or $l->end
 ```
 
 ##helpers
