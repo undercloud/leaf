@@ -86,5 +86,5 @@ Undercloud\Leaf::init($opt = array())
 ```
 **escape** - escape special chars
 ```PHP
-Leaf::escape($s)
+Undercloud\Leaf::escape($s)
 ```
