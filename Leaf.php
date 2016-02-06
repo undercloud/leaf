@@ -1,4 +1,6 @@
 <?php
+	namespace Undercloud;
+
 	class Leaf 
 	{
 		private $format      = false;
@@ -9,7 +11,7 @@
 		private $selfclosing = array('area', 'base', 'br', 'col', 'command', 'embed', 'hr', 'img', 'input', 'keygen', 'link', 'meta', 'param', 'source', 'track', 'wbr');
 		private $content     = '';
 
-		public function __construct($o = array())
+		public function __construct(array $o = array())
 		{
 			if (isset($o['selfclosing'])) {
 				$this->selfclosing = $o['selfclosing'];
@@ -24,7 +26,7 @@
 			}
 		}
 
-		public static function init($o = array())
+		public static function init(array $o = array())
 		{
 			return new self($o);
 		}

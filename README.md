@@ -1,11 +1,9 @@
 # leaf
-PHP / JS DOM Generator
+PHP DOM Generator
 
 simple example
 ```PHP
-	require 'leaf.php';
-
-	$l = new Leaf();
+	$l = new Undercloud\Leaf();
 
 	$l->el('html')
 		->el('body')
@@ -21,7 +19,7 @@ simple example
 ##constructor
 
 ```PHP
-	$l = new Leaf(
+	$l = new Undercloud\Leaf(
 		array(
 			//format tree
 			'format' => true
@@ -77,7 +75,7 @@ $l->end()
 ##helpers
 **init** - create instance
 ```PHP
-Leaf::init($opt = array())
+Undercloud\Leaf::init($opt = array())
 ```
 **escape** - escape special chars
 ```PHP
