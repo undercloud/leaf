@@ -3,7 +3,7 @@ PHP DOM Generator
 
 simple example
 ```PHP
-	$l = new Undercloud\Leaf();
+	$l = new \Undercloud\Leaf();
 
 	$l->el('html')
 		->el('body')
@@ -19,7 +19,7 @@ simple example
 ##constructor
 
 ```PHP
-	$l = new Undercloud\Leaf(
+	$l = new \Undercloud\Leaf(
 		array(
 			//format tree
 			'format' => true,
