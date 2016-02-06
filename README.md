@@ -22,9 +22,11 @@ simple example
 	$l = new Undercloud\Leaf(
 		array(
 			//format tree
-			'format' => true
+			'format' => true,
+			//indent in formatted tree, default two spaces
+			'indent' => '  ',
 			//define own single tags
-			'selfclosing' => array(...) 
+			'selfclosing' => array(...)
 		)
 	);
 
@@ -59,7 +61,7 @@ $l->el('input:text')
 
 Single attr helper for 'checked','disabled','readonly','required','multiple e.g.
 ```PHP
-$l->('select:multiple')
+$l->el('select:multiple')
 ```
 
 **text** - create text node
@@ -67,9 +69,14 @@ $l->('select:multiple')
 $l->text('any content')
 ```
 
+**raw** - add raw data wihout escaping
+```PHP
+$l->raw('raw content')
+```
+
 **end** - close tag
 ```PHP
-$l->end()
+$l->end() // or $l->end
 ```
 
 ##helpers
