@@ -1,7 +1,7 @@
 <?php
 	namespace Undercloud;
 
-	class Leaf 
+	class Leaf
 	{
 		private $format      = false;
 		private $indent      = '  ';
@@ -26,11 +26,6 @@
 			}
 		}
 
-		public static function init(array $o = array())
-		{
-			return new self($o);
-		}
-
 		public static function escape($a, $de = false)
 		{
 			return htmlentities($a, ENT_QUOTES, 'UTF-8', $de);
@@ -41,12 +36,12 @@
 			$attr   = array();
 			$text   = null;
 			$args   = func_get_args();
-			$lclass = array(); 
+			$lclass = array();
 
 			switch (count($args)) {
 				case 2:
 					if (is_array($args[1])) {
-						$attr = $args[1];	  
+						$attr = $args[1];
 					} else {
 						$text = $args[1];
 					}
@@ -73,7 +68,7 @@
 						case ':':
 							if (in_array($m[2], array('button', 'checkbox', 'file', 'hidden', 'image', 'password', 'radio', 'reset', 'submit', 'text'))) {
 								$attr['type'] = $m[2];
-							} else if(in_array($m[2], array('checked', 'disabled', 'readonly', 'required', 'multiple'))) {
+							} else if (in_array($m[2], array('checked', 'disabled', 'readonly', 'required', 'multiple'))) {
 								$attr[$m[2]] = $m[2];
 							}
 						break;
@@ -90,16 +85,16 @@
 						$lclass,
 						explode(' ', $attr['class'])
 					));
-				} else if($lclass) {
+				} else if ($lclass) {
 					$attr['class'] = implode(' ', $lclass);
 				}
 
-				array_walk($attr, function(&$a, $b) {
+				array_walk($attr, function (&$a, $b) {
 					if (is_integer($b)) {
 						$a = static::escape($a);
 					} else {
 						if ('style' == $b and is_array($a)) {
-							array_walk($a, function(&$x, $y){
+							array_walk($a, function (&$x, $y) {
 								$x = ($y . ':' . $x);
 							});
 
@@ -130,10 +125,10 @@
 			}
 
 			$this->content .= $space . '<' . $tag . ($attr ? (' ' . implode(' ', $attr)) : '') . ($closed ? ' />' : '>') . static::escape($text);
-		
+
 			return $this;
 		}
- 
+
 		public function text($t)
 		{
 			$this->content .= static::escape($t);
