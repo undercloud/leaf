@@ -26,6 +26,11 @@
 			}
 		}
 
+		public static function init(array $o = array())
+		{
+			return new self($o);
+		}
+
 		public static function escape($a, $de = false)
 		{
 			return htmlentities($a, ENT_QUOTES, 'UTF-8', $de);
