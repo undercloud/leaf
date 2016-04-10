@@ -1,7 +1,10 @@
 # leaf
 PHP DOM Generator
 
-simple example
+##install
+```composer require unercloud/leaf```
+
+##simple example
 ```PHP
 	$l = new Undercloud\Leaf();
 
