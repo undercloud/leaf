@@ -1,0 +1,19 @@
+{
+	"name": "undercloud/leaf",
+	"description": "PHP DOM Generator",
+	"keywords": ["dom","html","builder","generator"],
+	"homepage": "https://github.com/undercloud/leaf",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "undercloud",
+			"email": "lodashes@gmail.com"
+		}
+	],
+	"require": {
+		"php": ">=5.3.0"
+	},
+	"autoload": {
+		"files": ["Leaf.php"]
+	}
+}
